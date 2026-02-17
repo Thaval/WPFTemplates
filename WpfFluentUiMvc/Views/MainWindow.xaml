@@ -1,0 +1,29 @@
+<ui:FluentWindow x:Class="WpfFluentUiMvc.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Title="WPF Fluent UI - MVC" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen"
+        ExtendsContentIntoTitleBar="True">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="MVC Counter"
+                       FontSize="24" FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,16" />
+
+            <TextBlock x:Name="CounterText"
+                       Text="0"
+                       FontSize="48" FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,16" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ui:Button Content="−" Click="OnDecrementClick" Appearance="Secondary" Width="60" Margin="0,0,8,0" />
+                <ui:Button Content="Reset" Click="OnResetClick" Appearance="Caution" Width="80" Margin="0,0,8,0" />
+                <ui:Button Content="+" Click="OnIncrementClick" Appearance="Primary" Width="60" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>

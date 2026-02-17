@@ -1,0 +1,33 @@
+<ui:FluentWindow x:Class="WpfFluentUiMvvm.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:vm="clr-namespace:WpfFluentUiMvvm.ViewModels"
+        Title="WPF Fluent UI - MVVM" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen"
+        ExtendsContentIntoTitleBar="True">
+
+    <ui:FluentWindow.DataContext>
+        <vm:CounterViewModel />
+    </ui:FluentWindow.DataContext>
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="MVVM Counter"
+                       FontSize="24" FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,16" />
+
+            <TextBlock Text="{Binding Count}"
+                       FontSize="48" FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,16" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ui:Button Content="−" Command="{Binding DecrementCommand}" Appearance="Secondary" Width="60" Margin="0,0,8,0" />
+                <ui:Button Content="Reset" Command="{Binding ResetCommand}" Appearance="Caution" Width="80" Margin="0,0,8,0" />
+                <ui:Button Content="+" Command="{Binding IncrementCommand}" Appearance="Primary" Width="60" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>
